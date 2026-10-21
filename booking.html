@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Booking at SocialAddress — Kajal Gupta</title>
+<meta name="description" content="Case study: Booking improvements at SocialAddress.ai: booking forms, connected calendar, branded pages and AI scheduling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Allura&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="theme.js"></script>
+<script src="splash-cursor.js" defer></script>
+</head>
+<body>
+<div class="torch" aria-hidden="true"><i class="t-rays r1"></i><i class="t-rays r2"></i><div class="t-fog"><i class="f1"></i><i class="f2"></i></div><i class="t-core"></i></div>
+<nav class="nav"><div class="wrap"><div class="nav-inner">
+  <a class="brand" href="/"><span class="mono">KG</span>Kajal Gupta</a>
+  <div class="nav-links"><a href="/#intro">About Me</a><a href="/#journey">Experience</a><a href="/#projects">Side Projects</a><a class="talk" href="/#contact">Let's talk</a></div>
+</div></div></nav>
+
+<header class="cs-head"><div class="wrap">
+  <a class="back" href="/#journey">← Back to journey</a>
+  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px"><span class="chip plain">SocialAddress.ai</span><span class="chip live">Live</span><span class="chip test">AI scheduling in testing</span></div>
+  <h1>Booking: less admin around every appointment</h1>
+  <p class="sub">Booking a slot is only half the job. Before a session, owners need information from the customer, and after booking, plans change. I owned the improvements that brought both into the product.</p>
+  <div class="metabar">
+    <div><b>Role</b>Product Management Intern</div>
+    <div><b>Ownership</b>Independent: research, roadmap, PRDs, delivery</div>
+    <div><b>Research</b>11 doctor interviews + workshop sellers</div>
+    <div><b>Worked with</b>Design and Engineering</div>
+  </div>
+</div></header>
+
+<main class="cs"><div class="wrap">
+
+  <div class="cs-sec">
+    <h2><span class="num">01</span>Context</h2>
+    <p>SocialAddress Booking lets any business share one link where customers book an appointment, a 1:1 session, an interview or a workshop ticket. It serves businesses whose <b>time is the product</b>: doctors and clinics, workshop hosts, coaches and consultants. This was separate from Shop, my main project.</p>
+  </div>
+
+  <div class="cs-sec">
+    <h2><span class="num">02</span>What users described</h2>
+    <p>My main research was <b>11 interviews with doctors</b>. Workshop and course sellers from my merchant interviews described the same manual work.</p>
+    <div class="tbl-wrap"><table class="tbl">
+      <tr><th>What they described</th><th>Who</th></tr>
+      <tr><td>Information needed before the session (history, reports) is collected separately, usually on WhatsApp</td><td>Doctors, clinics</td></tr>
+      <tr><td>Enrolment runs on Google Forms, payment screenshots, pre-written messages and spreadsheets</td><td>Workshop and course hosts</td></tr>
+      <tr><td>Meeting links are created and shared by hand</td><td>Clinics, workshop hosts</td></tr>
+      <tr><td>Plans change: no-shows, late arrivals, delays, and repeated calls about timings</td><td>Doctors, clinics</td></tr>
+      <tr><td>Customers drop off when they have to switch between platforms</td><td>Clinic</td></tr>
+    </table></div>
+    <div class="callout warm">
+      <span class="chip interp">Counter-signal</span>
+      <p>Some doctors don't need online booking at all, because their patients are local and prefer to call. One workshop host found forms alone didn't convert, because people wanted a conversation before paying. So the goal was to <b>reduce the admin around a booking, not replace the conversation.</b></p>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <h2><span class="num">03</span>What changed</h2>
+    <div class="two">
+      <div><span class="chip live">Live</span><h4 style="margin-top:8px">Booking forms with document upload</h4><p>Each business chooses what to ask before a session, and customers can upload documents while booking. <i>For example:</i> a doctor asks for medical history and reports, a workshop host asks for skill level, and a consultant asks what to discuss.</p></div>
+      <div><span class="chip live">Live</span><h4 style="margin-top:8px">One connected booking → calendar flow</h4><p>A confirmed booking appears in the calendar automatically. From there the owner can reschedule, and both sides get notified whenever a slot changes, with no calls needed.</p></div>
+      <div><span class="chip live">Live</span><h4 style="margin-top:8px">Branded booking pages</h4><p>Owners match the page to their brand colours, so the link feels like <i>their</i> business. Trust came up again and again in the research.</p></div>
+      <div><span class="chip test">In testing</span><h4 style="margin-top:8px">SAM AI scheduling</h4><p>The owner tells SAM what they want in plain words. SAM proposes the calendar change, and the owner reviews and confirms it.</p></div>
+    </div>
+    <div class="callout accent">
+      <span class="chip obs">Key decision</span>
+      <p><b>The AI proposes, and the owner confirms.</b> In my merchant research, small-business owners avoided letting AI act for them. A confirmation step makes AI useful without taking away control.</p>
+    </div>
+    <div class="placeholder">Booking screens: to be added (form with upload, calendar, branded page)</div>
+  </div>
+
+  <div class="cs-sec">
+    <h2><span class="num">04</span>My contribution</h2>
+    <ul>
+      <li>Interviewed 11 doctors and pulled out the recurring problems</li>
+      <li>Built the roadmap and prioritised the improvements</li>
+      <li>Wrote the PRDs</li>
+      <li>Worked with design and engineering through delivery</li>
+    </ul>
+  </div>
+
+  <div class="cs-sec">
+    <h2><span class="num">05</span>What I'd do next</h2>
+    <ul>
+      <li><b>Measure the admin it removes:</b> no-show rate, reschedule rate, and how many bookings arrive with complete information.</li>
+      <li><b>Research beyond doctors:</b> interview coaches and consultants directly, since the forms are designed for them too.</li>
+    </ul>
+  </div>
+
+  <div class="next"><a href="nurdd.html"><span><small>Next case study</small>Nurdd: a reason for creators to come back</span><span>→</span></a></div>
+</div></main>
+
+<footer><div class="wrap"><span>© 2026 Kajal Gupta</span><a href="mailto:kajalnm20@gmail.com">kajalnm20@gmail.com</a></div></footer>
+</body>
+</html>
