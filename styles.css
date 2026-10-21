@@ -1272,11 +1272,11 @@ mark.key, mark.wk-key { background: linear-gradient(transparent 62%, var(--musta
 .co-info .muted, .co-info ul { color: #4a4745; }
 .co-info .sc-co a, .ac, .co-lead em, .co-info li b, .ip-points b { color: var(--mustard-deep) !important; }
 .wk { color: var(--black); border: 1.5px solid var(--black) !important; }
-.g-shop, .g-tools { --pastel: linear-gradient(135deg, #f0d99f 0%, #e9e4dc 100%); }
+.g-shop, .g-tools { --pastel: linear-gradient(135deg, var(--mustard-soft) 0%, #e9e4dc 100%); }
 .g-book, .g-dash { --pastel: linear-gradient(135deg, #e9e4dc 0%, #f2eee7 100%); }
 .g-grow, .g-qikd { --pastel: linear-gradient(135deg, #dcd7cf 0%, #f2eee7 100%); }
 .wk-ico svg { stroke: var(--black); } .wk-chip { background: var(--black); color: var(--mustard-light); } .wk-go { background: var(--black); color: var(--paper); }
-.works::before { background: radial-gradient(circle, rgba(232,196,110,.5), transparent 70%) !important; }
+.works::before { background: radial-gradient(circle, color-mix(in srgb, var(--y) 50%, transparent), transparent 70%) !important; }
 .works::after { background: radial-gradient(circle, rgba(231,229,227,.35), transparent 70%) !important; }
 .s3-tabs { background: var(--paper); border-color: var(--black); } .s3-tabs button { color: #4a4745; } .s3-tabs button.on { background: var(--black); color: var(--mustard-light); }
 .s3-progress { background: rgba(255,255,255,.15); } .s3-progress span { background: var(--mustard); }
@@ -1285,7 +1285,7 @@ mark.key, mark.wk-key { background: linear-gradient(transparent 62%, var(--musta
 .mc-plus { background: var(--mustard); }
 .s2-stats div { border-left-color: var(--mustard) !important; }
 .s2-stats div:nth-child(2) { --c: var(--mustard-light); } .s2-stats div:nth-child(1) { --c: var(--mustard); } .s2-stats div:nth-child(3) { --c: var(--paper); } .s2-stats div:nth-child(4) { --c: var(--wall-mid); }
-.s2-chart .grid line { stroke: rgba(255,255,255,.12); } .s2-chart .line { stroke: var(--mustard-light); } .s2-chart .area { fill: rgba(232,196,110,.16); } .s2-chart .pt { fill: var(--wall); stroke: var(--mustard); }
+.s2-chart .grid line { stroke: rgba(255,255,255,.12); } .s2-chart .line { stroke: var(--mustard-light); } .s2-chart .area { fill: color-mix(in srgb, var(--y) 16%, transparent); } .s2-chart .pt { fill: var(--wall); stroke: var(--mustard); }
 .s2 .fc1 { background: linear-gradient(160deg, var(--paper), #dcd7cf); } .s2 .fc2 { background: linear-gradient(160deg, var(--mustard-light), var(--mustard)); } .s2 .fc3 { background: linear-gradient(160deg, var(--paper-2), #cfc9c5); }
 .fc { border: 1.5px solid var(--black); } .fc-word { background: var(--black); color: var(--mustard-light); } .fc-go { color: var(--black); }
 .gc-dots i { background: rgba(255,255,255,.3); } .gc-dots i.on { background: var(--mustard); }
@@ -1300,7 +1300,7 @@ mark.key, mark.wk-key { background: linear-gradient(transparent 62%, var(--musta
 @keyframes slot { 0%, 15% { transform: translate(0, 0); background: #cfc9c5; } 40%, 55% { transform: translate(44px, 0); background: #cfc9c5; } 75%, 100% { transform: translate(44px, 23px); background: var(--mustard); } }
 
 /* v4: certificate carousel glow blobs in palette tones */
-.gc .b1 { background: radial-gradient(circle, rgba(209,154,45,.55), transparent 70%) !important; }
+.gc .b1 { background: radial-gradient(circle, color-mix(in srgb, var(--y) 55%, transparent), transparent 70%) !important; }
 .gc .b2 { background: radial-gradient(circle, rgba(233,228,220,.35), transparent 70%) !important; }
 
 /* v4: case pages — light text on the grey wall, dark text on paper panels */
@@ -1392,18 +1392,18 @@ body::after { width: 520px; height: 150px; margin-left: -260px; top: -50px;
   transition: transform .4s cubic-bezier(.2,.8,.2,1), width .4s cubic-bezier(.2,.8,.2,1), opacity .25s ease; }
 .nav-pill.on { opacity: 1; }
 .nav-links a.talk { background: var(--y) !important; color: var(--k) !important; border: 0 !important; transition: background .25s, box-shadow .25s, transform .25s; }
-.nav-links a.talk:hover { background: var(--y-hi) !important; box-shadow: 0 6px 20px rgba(242,189,44,.3); transform: translateY(-1px); }
+.nav-links a.talk:hover { background: var(--y-hi) !important; box-shadow: 0 6px 20px color-mix(in srgb, var(--y) 30%, transparent); transform: translateY(-1px); }
 @media (max-width: 720px) { .nav-links a:not(.talk) { display: none; } }
 
 /* ---------- buttons ---------- */
 .hero .cta, .btn-primary, .contact-card .btn-mail { background: var(--y) !important; color: var(--k) !important; border: 0 !important; transition: background .25s, box-shadow .25s, transform .25s; }
-.hero .cta:hover, .btn-primary:hover, .contact-card .btn-mail:hover { background: var(--y-hi) !important; box-shadow: 0 8px 24px rgba(242,189,44,.28); }
+.hero .cta:hover, .btn-primary:hover, .contact-card .btn-mail:hover { background: var(--y-hi) !important; box-shadow: 0 8px 24px color-mix(in srgb, var(--y) 28%, transparent); }
 .btn-ghost, .contact-card .btn-line { background: transparent !important; color: var(--w) !important; border: 1px solid rgba(255,255,255,.28) !important; }
 .btn-ghost:hover, .contact-card .btn-line:hover { border-color: var(--y) !important; color: var(--y) !important; }
 
 /* ---------- text on the wall ---------- */
 .eyebrow { color: var(--y); }
-.s3 .eyebrow { color: #e8c46e; }
+.s3 .eyebrow { color: var(--mustard-light); }
 .ht-script, .g2-word, .s2-sub { color: var(--y) !important; }
 .hero .cats i { background: var(--y); }
 .hl, .hero-title .hl { background-image: linear-gradient(transparent 60%, var(--y) 60%, var(--y) 92%, transparent 92%); }
@@ -1419,7 +1419,7 @@ body::after { width: 520px; height: 150px; margin-left: -260px; top: -50px;
 .pv-box b { color: var(--y); }
 .pv-memo { background: #1f1f1f !important; border-color: var(--k-line) !important; color: var(--w); }
 .mm-stamp { color: var(--y) !important; border-color: var(--y) !important; }
-.mx-q { background: #212121 !important; } .pmviz[data-stage="3"] .mx-q.q1 { background: rgba(242,189,44,.14) !important; box-shadow: 0 0 0 2px var(--y) !important; }
+.mx-q { background: #212121 !important; } .pmviz[data-stage="3"] .mx-q.q1 { background: color-mix(in srgb, var(--y) 14%, transparent) !important; box-shadow: 0 0 0 2px var(--y) !important; }
 .mx-card { background: #2a2a2a !important; color: var(--w) !important; border-color: rgba(255,255,255,.1) !important; }
 .mx-card[data-g="A"] { background: var(--y) !important; color: var(--k) !important; }
 .mx-badge { background: var(--y) !important; color: var(--k) !important; }
@@ -1433,14 +1433,14 @@ body::after { width: 520px; height: 150px; margin-left: -260px; top: -50px;
 .s2 .fc-in::before { content: ""; position: absolute; left: 20px; right: 20px; top: 0; height: 2px; border-radius: 2px; background: var(--y); transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
 .s2 .fc-co { color: var(--w); }
 .s2 .fc-in p { color: var(--w); }
-.s2 .fc-word { background: rgba(242,189,44,.14) !important; color: var(--y) !important; border: 1px solid rgba(242,189,44,.35); }
+.s2 .fc-word { background: color-mix(in srgb, var(--y) 14%, transparent) !important; color: var(--y) !important; border: 1px solid color-mix(in srgb, var(--y) 35%, transparent); }
 .s2 .fc-go { color: var(--w-muted) !important; transition: color .3s; }
-.s2[data-stage] a.fc:hover { transform: none !important; border-color: rgba(242,189,44,.5) !important; background-color: var(--k-card-2) !important; box-shadow: 0 0 0 1px rgba(242,189,44,.18), 0 18px 40px rgba(0,0,0,.34); }
+.s2[data-stage] a.fc:hover { transform: none !important; border-color: color-mix(in srgb, var(--y) 50%, transparent) !important; background-color: var(--k-card-2) !important; box-shadow: 0 0 0 1px color-mix(in srgb, var(--y) 18%, transparent), 0 18px 40px rgba(0,0,0,.34); }
 .s2 a.fc:hover .fc-in { background: transparent !important; }
 .s2 a.fc:hover .fc-in::before { transform: scaleX(1); }
 .s2 a.fc:hover .fc-go { color: var(--y) !important; }
 .s2-stats b { color: var(--w); }
-.s2-chart .line { stroke: var(--y); } .s2-chart .area { fill: rgba(242,189,44,.12); } .s2-chart .pt { fill: #333; stroke: var(--y); }
+.s2-chart .line { stroke: var(--y); } .s2-chart .area { fill: color-mix(in srgb, var(--y) 12%, transparent); } .s2-chart .pt { fill: #333; stroke: var(--y); }
 .s2-stats div { border-left-color: var(--y) !important; }
 .l-close .s2-close, .g2-typed { color: var(--w); }
 .g2-caret { background: var(--y); }
@@ -1451,7 +1451,7 @@ body::after { width: 520px; height: 150px; margin-left: -260px; top: -50px;
 .lip-grid { display: grid; gap: 26px; grid-template-columns: 1fr; }
 @media (min-width: 760px) { .lip-grid { grid-template-columns: repeat(2, 1fr); } }
 .lip { display: flex; flex-direction: column; background: var(--k-card); border: 1px solid var(--k-line); border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,.3); transition: border-color .35s ease, box-shadow .35s ease; }
-.lip:hover { border-color: rgba(242,189,44,.45); box-shadow: 0 0 0 1px rgba(242,189,44,.15), 0 24px 56px rgba(0,0,0,.38); }
+.lip:hover { border-color: color-mix(in srgb, var(--y) 45%, transparent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--y) 15%, transparent), 0 24px 56px rgba(0,0,0,.38); }
 .lip-head { display: flex; align-items: center; gap: 12px; padding: 16px 18px 14px; }
 .lip-av { flex: none; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--y); color: var(--k); font: 700 .95rem "Inter", sans-serif; }
 .lip-who { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
@@ -1479,9 +1479,9 @@ body::after { width: 520px; height: 150px; margin-left: -260px; top: -50px;
 .certs { overflow-x: clip; }
 .gc { height: clamp(380px, 50vh, 460px); }
 .gc-card { background: var(--k-card) !important; border: 1px solid var(--k-line); box-shadow: 0 24px 60px rgba(0,0,0,.4) !important; transition: border-color .3s; }
-.gc-card.front { border-color: rgba(242,189,44,.6); }
+.gc-card.front { border-color: color-mix(in srgb, var(--y) 60%, transparent); }
 .gc-bg { opacity: .25; }
-.gc .b1 { background: radial-gradient(circle, rgba(242,189,44,.5), transparent 70%) !important; }
+.gc .b1 { background: radial-gradient(circle, color-mix(in srgb, var(--y) 50%, transparent), transparent 70%) !important; }
 .gc .b2 { background: radial-gradient(circle, rgba(255,255,255,.25), transparent 70%) !important; }
 .gc-nav { gap: 16px; }
 .gc-arrow { width: 42px !important; height: 42px !important; border-radius: 50%; border: 1px solid rgba(255,255,255,.22) !important; background: rgba(255,255,255,.06) !important; color: var(--w) !important; font-size: 1.05rem; cursor: pointer; transition: background .25s, color .25s, border-color .25s; }
@@ -1568,3 +1568,33 @@ body::before, body::after { content: none !important; display: none !important; 
 .lip-img { aspect-ratio: 4 / 3; }
 .lip-text { padding: 12px 14px 0; font-size: .88rem; line-height: 1.5; }
 .lip-more { margin: 8px 14px 14px; font-size: .86rem; }
+
+/* accent: defaults for the soft tone used in Section 3 pastels */
+:root { --mustard-soft: #f0d99f; --mustard-deep: #a8761a; }
+.s3 { --mustard-soft: #f0d99f; }
+
+/* colour preview bar (temporary, for choosing the accent) */
+.acc-bar { position: fixed; left: 0; right: 0; top: 0; z-index: 2000; height: 46px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 12px; background: rgba(10,10,10,.92); border-bottom: 1px solid rgba(255,255,255,.12); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); font: 600 .78rem "Inter", sans-serif; color: #f5f3ee; overflow-x: auto; white-space: nowrap; }
+.acc-bar span { opacity: .75; margin-right: 4px; }
+.acc-bar button.sw { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(255,255,255,.25); cursor: pointer; padding: 0; transition: transform .2s, border-color .2s; }
+.acc-bar button.sw:hover { transform: scale(1.15); }
+.acc-bar button.sw.on { border-color: #fff; box-shadow: 0 0 0 2px rgba(255,255,255,.35); }
+.acc-bar label { display: inline-flex; align-items: center; gap: 6px; margin-left: 6px; cursor: pointer; }
+.acc-bar input[type=color] { width: 28px; height: 24px; border: 0; padding: 0; background: none; cursor: pointer; }
+.acc-bar code { font: 600 .76rem ui-monospace, Menlo, monospace; background: rgba(255,255,255,.08); padding: 3px 7px; border-radius: 6px; }
+.acc-bar .reset { background: transparent; color: #f5f3ee; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 4px 10px; font: inherit; cursor: pointer; }
+html.has-acc body { padding-top: 46px; }
+html.has-acc .nav { top: 46px; }
+
+/* v7 — softer, diffused torch light: no hard beam edges, glow filtering through smoke */
+.t-core { top: -260px; width: min(1500px, 130vw); height: 620px; margin-left: calc(min(1500px, 130vw) / -2); filter: blur(60px);
+  background: radial-gradient(ellipse at 50% 40%, rgba(255,255,255,.34), rgba(255,255,255,.12) 45%, transparent 72%); animation: tFlicker 9s ease-in-out infinite; }
+.t-rays.r1 { background: conic-gradient(from 0deg at 50% -12%, transparent 0deg, transparent 128deg, rgba(255,255,255,.07) 150deg, rgba(255,255,255,.13) 172deg, rgba(255,255,255,.15) 180deg, rgba(255,255,255,.13) 188deg, rgba(255,255,255,.07) 210deg, transparent 232deg, transparent 360deg) !important;
+  filter: blur(46px); animation: tSway 18s ease-in-out infinite alternate, tFlicker 11s ease-in-out infinite; }
+.t-rays.r2 { filter: blur(24px); opacity: .45; animation: tSway 14s ease-in-out infinite alternate-reverse; }
+.t-rays { -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.7) 40%, rgba(0,0,0,.25) 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.7) 40%, rgba(0,0,0,.25) 72%, transparent 100%); }
+.t-fog { -webkit-mask-image: radial-gradient(ellipse 62% 70% at 50% 42%, #000 0%, rgba(0,0,0,.55) 45%, transparent 85%); mask-image: radial-gradient(ellipse 62% 70% at 50% 42%, #000 0%, rgba(0,0,0,.55) 45%, transparent 85%); }
+.t-fog i { filter: blur(10px); }
+.t-fog .f1 { opacity: .5; animation-duration: 46s; }
+.t-fog .f2 { opacity: .38; animation-duration: 60s; }
+@media (max-width: 700px) { .t-fog { -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 40%, #000, transparent 85%); mask-image: radial-gradient(ellipse 90% 60% at 50% 40%, #000, transparent 85%); } }
