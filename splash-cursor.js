@@ -923,7 +923,7 @@
     }
 
     // Portfolio pastels: marigold, mint, pink, lavender.
-    const PALETTE = [[209, 154, 45], [232, 196, 110], [233, 228, 220], [168, 118, 26]];
+    const PALETTE = [[219, 165, 72], [230, 192, 127], [245, 243, 238], [164, 124, 54]];
     function generateColor() {
       const pal = window.__accentPalette || PALETTE;
       const [r, g, b] = pal[Math.floor(Math.random() * pal.length)];
