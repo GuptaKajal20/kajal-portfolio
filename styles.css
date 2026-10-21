@@ -1587,8 +1587,3 @@ body::before, body::after { content: none !important; display: none !important; 
 .t-fog .f1 { opacity: .5; animation-duration: 46s; }
 .t-fog .f2 { opacity: .38; animation-duration: 60s; }
 @media (max-width: 700px) { .t-fog { -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 40%, #000, transparent 85%); mask-image: radial-gradient(ellipse 90% 60% at 50% 40%, #000, transparent 85%); } }
-
-/* accent colour: #dba548 (chosen by Kajal) — used everywhere, black and white unchanged */
-:root { --y: #dba548; --y-hi: #e6c07f; --y-soft: rgba(219,165,72,.16); --accent: #dba548; --accent-soft: rgba(219,165,72,.16); --mark: #dba548; --mark-soft: rgba(219,165,72,.28);
-  --mustard: #dba548; --mustard-light: #e6c07f; --mustard-deep: #a47c36; --mustard-soft: #efd7ad; --lime: #dba548; --live: #dba548; --live-bg: rgba(219,165,72,.14); --obs: #dba548; --obs-bg: rgba(219,165,72,.14); }
-.s3 { --accent: #a47c36; --mark: #e6c07f; --mark-soft: #efd7ad; --mustard: #dba548; --mustard-light: #e6c07f; --mustard-deep: #a47c36; --mustard-soft: #efd7ad; --lime: #e6c07f; }
