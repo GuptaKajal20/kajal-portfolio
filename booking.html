@@ -23,7 +23,7 @@
   <a class="back" href="/#journey">← Back to journey</a>
   <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px"><span class="chip plain">SocialAddress</span><span class="chip live">Live</span><span class="chip test">AI scheduling in testing</span></div>
   <h1>Booking: less admin around every appointment</h1>
-  <p class="sub">Booking a slot was easy. Collecting information before it, and handling changes after it, wasn't.</p>
+  <p class="sub">Booking a slot is only half the job. Before a session, owners need information from the customer, and after booking, plans change. I owned the improvements that brought both into the product.</p>
   <div class="metabar">
     <div><b>Role</b>Product Management Intern</div>
     <div><b>Ownership</b>Independent: research, roadmap, PRDs, delivery</div>
@@ -32,7 +32,65 @@
   </div>
 </div></header>
 
-<main class="cs cs-compact"><div class="wrap"><section class="cx-case"><div class="cx"><article class="cx-b"><span class="cx-l"><i>01</i>Problem</span><h3>The admin around each booking happened off-platform.</h3><ul><li>Medical history and reports were collected separately, usually on WhatsApp.</li><li>Reschedules, delays and timing questions were handled with calls.</li></ul></article><article class="cx-b"><span class="cx-l"><i>02</i>Discovery</span><h3>Owners whose time is the product described the same manual work.</h3><ul><li><b>11 doctor interviews</b>, plus workshop and course sellers from my merchant research.</li><li>Meeting links shared by hand, enrolment run on forms and spreadsheets, customers dropping off when switching platforms.</li><li>Counter-signal: some local clinics don't need online booking, and some hosts need a conversation before payment.</li></ul></article><article class="cx-b"><span class="cx-l"><i>03</i>Approach</span><h3>Grouped the recurring problems and prioritised them on a roadmap.</h3><ul><li>Pulled recurring problems out of the interview notes: <b>collecting information</b>, <b>changing plans</b> and <b>trust</b>.</li><li>Set the goal: reduce the admin around a booking, not replace the conversation.</li><li>Wrote the PRDs and worked with design and engineering through delivery.</li></ul></article><article class="cx-b"><span class="cx-l"><i>04</i>Solution</span><h3>Bring the before and after into the product.</h3><ul><li><b>Booking forms with document upload</b>, set by each business. <span class="chip live">Live</span></li><li><b>Booking → calendar</b>, with reschedules and notifications to both sides. <span class="chip live">Live</span></li><li><b>Branded booking pages</b>, because trust kept coming up. <span class="chip live">Live</span></li><li><b>SAM AI scheduling</b>: the AI proposes, the owner confirms, since owners avoided letting AI act for them. <span class="chip test">In testing</span></li></ul></article></div></section><div class="cx-out"><span class="chip plain">Next</span><p>Measure the admin it removes: no-show rate, reschedule rate and how many bookings arrive with complete information.</p></div><div class="next"><a href="analytics.html"><span><small>Next case study</small>Growth &amp; onboarding: helping users find the features</span><span>→</span></a></div></div></main>
+<main class="cs"><div class="wrap">
+
+  <div class="cs-sec">
+    <h2><span class="num">01</span>Context</h2>
+    <p>SocialAddress Booking lets any business share one link where customers book an appointment, a 1:1 session, an interview or a workshop ticket. It serves businesses whose <b>time is the product</b>: doctors and clinics, workshop hosts, coaches and consultants. This was separate from Shop, my main project.</p>
+  </div>
+
+  <div class="cs-sec">
+    <h2><span class="num">02</span>What users described</h2>
+    <p>My main research was <b>11 interviews with doctors</b>. Workshop and course sellers from my merchant interviews described the same manual work.</p>
+    <div class="tbl-wrap"><table class="tbl">
+      <tr><th>What they described</th><th>Who</th></tr>
+      <tr><td>Information needed before the session (history, reports) is collected separately, usually on WhatsApp</td><td>Doctors, clinics</td></tr>
+      <tr><td>Enrolment runs on Google Forms, payment screenshots, pre-written messages and spreadsheets</td><td>Workshop and course hosts</td></tr>
+      <tr><td>Meeting links are created and shared by hand</td><td>Clinics, workshop hosts</td></tr>
+      <tr><td>Plans change: no-shows, late arrivals, delays, and repeated calls about timings</td><td>Doctors, clinics</td></tr>
+      <tr><td>Customers drop off when they have to switch between platforms</td><td>Clinic</td></tr>
+    </table></div>
+    <div class="callout warm">
+      <span class="chip interp">Counter-signal</span>
+      <p>Some doctors don't need online booking at all, because their patients are local and prefer to call. One workshop host found forms alone didn't convert, because people wanted a conversation before paying. So the goal was to <b>reduce the admin around a booking, not replace the conversation.</b></p>
+    </div>
+  </div>
+
+  <div class="cs-sec">
+    <h2><span class="num">03</span>What changed</h2>
+    <div class="two">
+      <div><span class="chip live">Live</span><h4 style="margin-top:8px">Booking forms with document upload</h4><p>Each business chooses what to ask before a session, and customers can upload documents while booking. <i>For example:</i> a doctor asks for medical history and reports, a workshop host asks for skill level, and a consultant asks what to discuss.</p></div>
+      <div><span class="chip live">Live</span><h4 style="margin-top:8px">One connected booking → calendar flow</h4><p>A confirmed booking appears in the calendar automatically. From there the owner can reschedule, and both sides get notified whenever a slot changes, with no calls needed.</p></div>
+      <div><span class="chip live">Live</span><h4 style="margin-top:8px">Branded booking pages</h4><p>Owners match the page to their brand colours, so the link feels like <i>their</i> business. Trust came up again and again in the research.</p></div>
+      <div><span class="chip test">In testing</span><h4 style="margin-top:8px">SAM AI scheduling</h4><p>The owner tells SAM what they want in plain words. SAM proposes the calendar change, and the owner reviews and confirms it.</p></div>
+    </div>
+    <div class="callout accent">
+      <span class="chip obs">Key decision</span>
+      <p><b>The AI proposes, and the owner confirms.</b> In my merchant research, small-business owners avoided letting AI act for them. A confirmation step makes AI useful without taking away control.</p>
+    </div>
+    <div class="placeholder">Booking screens: to be added (form with upload, calendar, branded page)</div>
+  </div>
+
+  <div class="cs-sec">
+    <h2><span class="num">04</span>My contribution</h2>
+    <ul>
+      <li>Interviewed 11 doctors and pulled out the recurring problems</li>
+      <li>Built the roadmap and prioritised the improvements</li>
+      <li>Wrote the PRDs</li>
+      <li>Worked with design and engineering through delivery</li>
+    </ul>
+  </div>
+
+  <div class="cs-sec">
+    <h2><span class="num">05</span>What I'd do next</h2>
+    <ul>
+      <li><b>Measure the admin it removes:</b> no-show rate, reschedule rate, and how many bookings arrive with complete information.</li>
+      <li><b>Research beyond doctors:</b> interview coaches and consultants directly, since the forms are designed for them too.</li>
+    </ul>
+  </div>
+
+  <div class="next"><a href="nurdd.html"><span><small>Next case study</small>Nurdd: a reason for creators to come back</span><span>→</span></a></div>
+</div></main>
 
 <footer><div class="wrap"><span>© 2026 Kajal Gupta</span><a href="mailto:kajalnm20@gmail.com">kajalnm20@gmail.com</a></div></footer>
 </body>
