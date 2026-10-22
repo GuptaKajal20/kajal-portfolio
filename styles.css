@@ -1612,3 +1612,24 @@ html { background: #000 !important; }
 .spot .t-beam::before { content: ""; position: absolute; inset: 0; clip-path: polygon(45% 0, 55% 0, 76% 100%, 24% 100%);
   background: linear-gradient(180deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.34) 22%, rgba(255,255,255,.14) 52%, rgba(255,255,255,.04) 80%, transparent 100%); }
 @media (max-width: 700px) { .spot .t-beam::before { clip-path: polygon(42% 0, 58% 0, 84% 100%, 16% 100%); } }
+
+/* v9 — smoke drifting in the spotlight, soft rays wandering in slow circles */
+.spot .t-smoke { position: absolute; left: 50%; top: 6vh; width: min(1100px, 130vw); height: 96vh; margin-left: calc(min(1100px, 130vw) / -2);
+  -webkit-mask-image: radial-gradient(ellipse 34% 62% at 50% 34%, #000 0%, rgba(0,0,0,.55) 45%, transparent 80%); mask-image: radial-gradient(ellipse 34% 62% at 50% 34%, #000 0%, rgba(0,0,0,.55) 45%, transparent 80%); }
+.spot .t-smoke i { position: absolute; inset: -18%; left: -18%; background-size: cover; background-position: center; filter: blur(8px); will-change: transform; }
+.spot .t-smoke .k1 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' preserveAspectRatio='xMidYMid slice'%3E%3Cfilter id='s' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0055' numOctaves='5' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.7 -.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E"); opacity: .32; --r: 4%; animation: spOrbit 48s linear infinite; }
+.spot .t-smoke .k2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' preserveAspectRatio='xMidYMid slice'%3E%3Cfilter id='s' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.0055' numOctaves='5' seed='17'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.7 -.62'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E"); opacity: .24; --r: 6%; animation: spOrbit 66s linear infinite reverse; }
+.spot .t-glows { position: absolute; left: 50%; top: calc(9vh + 10px); width: 0; height: 0; }
+.spot .t-glows i { position: absolute; left: -70px; top: 0; width: 140px; height: 78vh; transform-origin: 50% 0; border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.08) 45%, transparent 90%); filter: blur(30px); will-change: transform, opacity; }
+.spot .t-glows .g1 { animation: spRay1 19s ease-in-out infinite; }
+.spot .t-glows .g2 { width: 110px; left: -55px; height: 70vh; animation: spRay2 26s ease-in-out infinite; }
+.spot .t-glows .g3 { width: 170px; left: -85px; height: 84vh; opacity: .8; animation: spRay3 33s ease-in-out infinite; }
+.spot .t-glows .g4 { width: 90px; left: -45px; height: 64vh; animation: spRay4 23s ease-in-out infinite; }
+@keyframes spOrbit { from { transform: rotate(0deg) translateX(var(--r)) rotate(0deg); } to { transform: rotate(360deg) translateX(var(--r)) rotate(-360deg); } }
+@keyframes spRay1 { 0%,100% { transform: rotate(-9deg) translateX(0); opacity: .7; } 25% { transform: rotate(2deg) translateX(14px); opacity: 1; } 50% { transform: rotate(10deg) translateX(0); opacity: .75; } 75% { transform: rotate(-1deg) translateX(-14px); opacity: .95; } }
+@keyframes spRay2 { 0%,100% { transform: rotate(8deg) translateX(0); opacity: .9; } 30% { transform: rotate(-4deg) translateX(-12px); opacity: .6; } 60% { transform: rotate(-11deg) translateX(6px); opacity: 1; } 80% { transform: rotate(3deg) translateX(12px); opacity: .7; } }
+@keyframes spRay3 { 0%,100% { transform: rotate(0deg) scaleX(1); opacity: .55; } 33% { transform: rotate(-6deg) scaleX(1.25); opacity: .8; } 66% { transform: rotate(6deg) scaleX(.9); opacity: .65; } }
+@keyframes spRay4 { 0%,100% { transform: rotate(-4deg) translateX(10px); opacity: .6; } 20% { transform: rotate(7deg) translateX(0); opacity: .9; } 55% { transform: rotate(13deg) translateX(-10px); opacity: .5; } 85% { transform: rotate(-12deg) translateX(0); opacity: .85; } }
+@media (prefers-reduced-motion: reduce) { .spot .t-smoke i, .spot .t-glows i { animation: none !important; } }
+@media (max-width: 700px) { .spot .t-smoke { -webkit-mask-image: radial-gradient(ellipse 48% 60% at 50% 34%, #000, transparent 80%); mask-image: radial-gradient(ellipse 48% 60% at 50% 34%, #000, transparent 80%); } }
