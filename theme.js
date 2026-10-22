@@ -573,7 +573,7 @@ document.addEventListener("DOMContentLoaded", function () {
   for (var d = 0; d < N; d++) dotsBox.appendChild(document.createElement("i"));
   var dots = dotsBox.querySelectorAll("i");
   function countUp(card) {
-    card.querySelectorAll(".gl-stats b").forEach(function (b) {
+    card.querySelectorAll(".gl-stats b[data-n]").forEach(function (b) {
       var end = +b.getAttribute("data-n"), suf = b.getAttribute("data-s") || "", t0 = null;
       (function f(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / 900, 1); b.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + (p === 1 ? suf : ""); if (p < 1) requestAnimationFrame(f); })(performance.now());
     });

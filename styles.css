@@ -2504,3 +2504,21 @@ body:has(.cs-story) .torch { opacity: .4; }
 .blog-cover:hover img { transform: scale(1.04); }
 @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+/* Nurdd case study */
+.qs { display: flex; flex-wrap: wrap; gap: 10px; }
+.qs span { padding: 10px 16px; border-radius: 999px; background: var(--fx-soft); border: 1px solid var(--fx-bd); color: #1d1c19; font-weight: 600; font-size: .95rem; }
+.phones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; margin: 8px 0 10px; }
+.phones figure { margin: 0; }
+.phones img { width: 100%; border-radius: 18px; display: block; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
+.phones .ph-frame { border-radius: 18px; overflow: hidden; aspect-ratio: 284 / 756; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
+.phones .ph-frame img { box-shadow: none; border-radius: 0; }
+.fx.is-cur.settled .phones .ph-frame img { animation: phScroll 12s ease-in-out .6s infinite alternate; }
+.phones .ph-frame:hover img { animation-play-state: paused; }
+@keyframes phScroll { 0%, 8% { transform: translateY(0); } 92%, 100% { transform: translateY(calc(-100% + 100cqh)); } }
+.phones .ph-frame { container-type: size; }
+.phones figcaption { margin-top: 10px; text-align: center; color: #5d584f; font-size: .85rem; }
+.phones figcaption b { display: block; color: #1d1c19; font-size: .95rem; }
+@media (max-width: 760px) { .phones { grid-template-columns: 1fr 1fr; } }
+.qk-shot img { max-height: 340px; }
+.tl-shot img { max-height: 300px; object-fit: contain; background: #fff; }
+.gl-stats b:not([data-n]) { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
