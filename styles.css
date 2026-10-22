@@ -2031,3 +2031,36 @@ html { background: #000 !important; }
 @keyframes mkQ { 0%, 5% { transform: scaleX(0); } 45%, 90% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
 @keyframes mkStep { 0%, 4% { fill: #fff; stroke: var(--bd); } 10%, 88% { fill: var(--mustard); stroke: var(--mustard); } 96%, 100% { fill: #fff; stroke: var(--bd); } }
 @media (prefers-reduced-motion: reduce) { .mk, .mk * { animation: none !important; } .mk-dash .mk-line { stroke-dashoffset: 0; } }
+
+/* ---------- compact case studies: Problem · Discovery · Approach · Solution ---------- */
+.cs-head { padding: 26px 0 8px; }
+.cs-head h1 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); margin-bottom: 10px; }
+.cs-head .sub { font-size: 1.02rem; margin-bottom: 0; }
+.cs-head .metabar { margin-top: 18px; }
+.cs-compact { padding: 22px 0 40px; }
+.cx-case { margin-top: 18px; scroll-margin-top: 90px; }
+.cx-title { font-size: clamp(1.4rem, 2.4vw, 1.9rem); color: var(--w); margin: 26px 0 12px; }
+.cx { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 860px) { .cx { grid-template-columns: 1fr 1fr; } }
+.cx-b { background: var(--k-card); border: 1px solid var(--k-line); border-radius: 16px; padding: 18px 20px 16px; transition: border-color .3s ease; }
+.cx-b:hover { border-color: color-mix(in srgb, var(--y) 45%, transparent); }
+.cx-l { display: inline-flex; align-items: center; gap: 8px; font: 700 .72rem "Inter", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--y); }
+.cx-l i { font-style: normal; display: inline-grid; place-items: center; min-width: 26px; height: 20px; padding: 0 6px; border-radius: 6px; background: var(--y); color: var(--k); letter-spacing: 0; }
+.cx-b h3 { color: var(--w); font-size: 1.06rem; line-height: 1.35; margin: 10px 0 8px; }
+.cx-b ul { margin: 0; padding-left: 18px; }
+.cx-b li { color: var(--w-muted); font-size: .92rem; line-height: 1.5; }
+.cx-b li + li { margin-top: 6px; }
+.cx-b li b { color: var(--w); font-weight: 600; }
+.cx-b li .chip { margin-left: 4px; vertical-align: 1px; }
+.cx-b a { color: var(--y); }
+.cx-shot { margin: 16px 0 0; }
+.cx-shot img { width: 100%; max-height: 300px; object-fit: cover; object-position: top; border-radius: 14px; border: 1px solid var(--k-line); }
+.cx-shot figcaption { margin-top: 8px; font-size: .82rem; color: var(--w-muted); }
+.cx-out { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding: 14px 18px; border-radius: 14px; background: color-mix(in srgb, var(--y) 9%, transparent); border: 1px solid color-mix(in srgb, var(--y) 28%, transparent); }
+.cx-out p { margin: 0; flex: 1 1 320px; color: var(--w); font-size: .94rem; line-height: 1.5; }
+.cx-out p b { color: var(--y); }
+.cs-compact .next { margin-top: 22px; }
+
+/* QikD card: a slightly shorter illustration */
+@media (min-width: 960px) { .g-qikd .wk-ill .il { top: 8%; height: 76%; } }
+@media (max-width: 959px) { .g-qikd .wk-ill { height: 112px; } }

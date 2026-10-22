@@ -23,7 +23,7 @@
   <a class="back" href="/#journey">← Back to journey</a>
   <div class="meta" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px"><span class="chip plain">SocialAddress · Main project</span><span class="chip live">Live · 10-merchant pilot</span></div>
   <h1>Shop: from PDF catalogues to a store merchants run themselves</h1>
-  <p class="sub">I was asked to build a shop. What merchants actually needed was a way to stop taking every order by hand, without the cost and setup of Shopify or Wix.</p>
+  <p class="sub">Small sellers ran every order by hand, and a full online store felt too heavy for them.</p>
   <div class="metabar">
     <div><b>Role</b>Product Management Intern</div>
     <div><b>Timeline</b>Jan – Aug 2026</div>
@@ -32,127 +32,7 @@
   </div>
 </div></header>
 
-<main class="cs"><div class="wrap">
-
-  <div class="cs-sec"><div class="tldr">
-    <span class="label">In 30 seconds</span>
-    <ul>
-      <li><b>Problem:</b> small sellers ran every order by hand across PDF catalogues, chats and UPI screenshots.</li>
-      <li><b>Research:</b> 44 merchant interviews. The barrier to going online was setup effort, cost and payments, not desire.</li>
-      <li><b>Decision:</b> V1 scoped to one complete order, with UPI-ID payments instead of a gateway, and growth tools moved to V2.</li>
-      <li><b>Result:</b> live with 10 pilot merchants. I have no verified usage numbers, so I don't show any.</li>
-    </ul>
-  </div></div>
-
-  <div class="cs-sec">
-    <h2><span class="num">01</span>Context</h2>
-    <p>SocialAddress is an AI-powered link-in-bio and WhatsApp business platform. Small businesses and creators use it to run their links, bookings, posts and customer conversations from one mobile page.</p>
-    <p>Many of them already sent customers to that page from their Instagram bio. The founder set the next step: <b>let them sell there too</b>. My job was to figure out <i>what</i> to build and <i>how</i>, then take it to merchants.</p>
-  </div>
-
-  <div class="cs-sec">
-    <h2><span class="num">02</span>Where merchants started</h2>
-    <p>The pilot merchants were existing SocialAddress clients. Most had no website. A typical order looked like this:</p>
-    <div class="flow manual">
-      <div class="step"><b>PDF catalogue</b><span>Shared on chat</span></div>
-      <div class="step"><b>Product code</b><span>Customer picks one</span></div>
-      <div class="step"><b>Back-and-forth</b><span>Price, size, delivery</span></div>
-      <div class="step"><b>UPI + screenshot</b><span>Merchant checks by hand</span></div>
-      <div class="step"><b>Delivery</b><span>Arranged separately</span></div>
-    </div>
-    <p>They already had customers. What slowed them down was everything after someone said <i>"I want to buy this."</i></p>
-  </div>
-
-  <div class="cs-sec">
-    <h2><span class="num">03</span>What 44 merchant interviews showed</h2>
-    <p>I interviewed 44 merchants: 39 product sellers and 5 sellers of workshops and digital offerings. I didn't ask what features they wanted. I asked about their workflow, starting with <b>how they sold their last product</b>.</p>
-    <p class="note">How often each theme came up in the notes of the 39 product sellers. These are minimum counts, because a merchant may feel something without mentioning it.</p>
-    <div class="bars">
-      <div class="bar"><span>Avoid AI or automated replies to customers</span><div class="track"><div class="fill" style="width:38%"></div></div><span class="val">15</span></div>
-      <div class="bar"><span>Have no website at all</span><div class="track"><div class="fill" style="width:38%"></div></div><span class="val">15</span></div>
-      <div class="bar"><span>Close sales in DMs, WhatsApp or calls</span><div class="track"><div class="fill" style="width:36%"></div></div><span class="val">14</span></div>
-      <div class="bar neg"><span>A fixed online store doesn't fit them</span><div class="track"><div class="fill" style="width:31%"></div></div><span class="val">12</span></div>
-      <div class="bar"><span>Find website setup too technical or slow</span><div class="track"><div class="fill" style="width:26%"></div></div><span class="val">10</span></div>
-      <div class="bar"><span>Want a website for trust or growth</span><div class="track"><div class="fill" style="width:21%"></div></div><span class="val">8</span></div>
-      <div class="bar"><span>Cost of a website or developer is a barrier</span><div class="track"><div class="fill" style="width:21%"></div></div><span class="val">8</span></div>
-      <div class="bar"><span>Take payment by hand (UPI screenshot, part-advance, COD)</span><div class="track"><div class="fill" style="width:18%"></div></div><span class="val">7</span></div>
-    </div>
-    <p class="note">Bar length = share of the 39 product sellers.</p>
-
-    <div class="two">
-      <div><span class="chip obs">Observed</span><h4 style="margin-top:8px">They want a store, but setup stops them</h4><p>Several had started a Shopify site and given up, or handed it to a developer, because of themes, variants, product uploads and payment setup.</p></div>
-      <div><span class="chip interp">Interpretation</span><h4 style="margin-top:8px">The barrier is effort, not desire</h4><p>So the design goal became a store a merchant could set up in about five minutes, without a developer. This was a goal, not a measured time.</p></div>
-    </div>
-
-    <div class="callout warm">
-      <span class="chip interp">Counter-signal</span>
-      <p><b>Shop isn't for everyone.</b> 12 of 39 sellers described businesses a fixed store doesn't suit: made-to-order products, prices that change, seasonal stock, wholesale buyers, or fear of designs being copied. Shop fits sellers with standard, ready-stock products best. Custom and wholesale sellers need a quote or catalogue flow instead.</p>
-    </div>
-  </div>
-
-  <div class="cs-sec">
-    <h2><span class="num">04</span>The idea merchants said no to</h2>
-    <p>To keep things simple, my first idea was fixed, ready-made templates where merchants only add products. When I showed it to merchants, they said it would be easy to start but wouldn't help them. They wanted the store to look like <b>their brand</b>, because customers trust something that looks like a real website more than buying through DMs.</p>
-    <p>That changed how I saw Shop. It had to make selling easier, <i>and</i> make the merchant look trustworthy. So V1 became: pick a template, then add your own logo, colours and fonts.</p>
-  </div>
-
-  <div class="cs-sec">
-    <h2><span class="num">05</span>V1: one real order, start to finish</h2>
-    <p>Every V1 feature had to answer one question: <b>can a merchant complete one real order without leaving the platform?</b></p>
-    <div class="flow product">
-      <div class="step"><b>Branded store</b><span>Template, logo, colours</span></div>
-      <div class="step"><b>Products</b><span>Physical and digital, with inventory</span></div>
-      <div class="step"><b>Order</b><span>Delivery-zone check</span></div>
-      <div class="step"><b>Payment</b><span>Merchant's UPI ID</span></div>
-      <div class="step"><b>Delivery</b><span>Own zones or Shiprocket</span></div>
-      <div class="step"><b>Updates</b><span>Auto messages, invoice, reviews</span></div>
-    </div>
-
-    <h3 style="margin-top:28px">Trade-off: UPI instead of a payment gateway</h3>
-    <p>Merchants already took payment by UPI, and some named payment setup as one of the "technical" parts of a website. Requiring a Razorpay account would add a step they don't take today. So V1 asked only for a <b>UPI ID</b>. I turned the payment gateway's documentation into requirements with engineering.</p>
-    <div class="two">
-      <div><h4>What it gained</h4><p>No gateway setup, so merchants could start selling straight away.</p></div>
-      <div><h4>What it cost</h4><p>Payments went to SocialAddress and were paid out to the merchant within 24 hours. Merchants waited for their money, and payouts were manual work for the team. That's fine for a pilot, but it would need to change at scale.</p></div>
-    </div>
-    <p class="note">Merchants weren't asked about gateways directly. This decision is my interpretation of how they described taking payment.</p>
-
-    <h3 style="margin-top:28px">What waited for V2</h3>
-    <p>Coupons, targeted discounts, abandoned-cart reminders and campaigns. A few merchants did ask for these, but they help merchants <i>grow</i> sales. They don't matter until a merchant has made a first sale.</p>
-  </div>
-
-  <div class="cs-sec">
-    <h2><span class="num">06</span>Who did what</h2>
-    <div class="roles">
-      <div class="me"><b>Me</b><span>Merchant interviews, problem definition, V1 scope, PRD, user flows, early screens, testing, onboarding pilot merchants</span></div>
-      <div><b>Founders</b><span>Set the direction to build Shop; reviewed it along the way</span></div>
-      <div><b>Designer</b><span>Final high-fidelity designs</span></div>
-      <div><b>Engineering</b><span>Built it, working from my requirements</span></div>
-      <div><b>Sales &amp; Ops</b><span>Helped bring on pilot merchants</span></div>
-    </div>
-    <div class="placeholder">Shop screens: to be added (awaiting SocialAddress approval)</div>
-  </div>
-
-  <div class="cs-sec">
-    <h2><span class="num">07</span>The pilot and what changed</h2>
-    <p>Shop went live with <b>10 pilot merchants</b>. Feedback was generally positive, and the main theme was that they could set up and run the store themselves. This was a qualitative pilot. My internship ended before longer-term results were tracked, so <b>I don't show usage, order or revenue numbers.</b></p>
-    <p>Three friction points came up: building the store still felt like effort, adding products took time, and writing product descriptions was hard.</p>
-    <div class="two">
-      <div><span class="chip test">In testing</span><h4 style="margin-top:8px">AI-written product descriptions</h4><p>We connected the SAM AI agent to product listing. A merchant describes a product in plain words, and SAM drafts the title and description. I tested it by acting as a merchant, found where the output went wrong, and shared fixes with engineering. Some pilot merchants were using it before I left.</p></div>
-      <div><span class="chip plain">Done</span><h4 style="margin-top:8px">Making behaviour visible</h4><p>Alongside the pilot, I defined analytics requirements and set up event tracking across Shop. The team could then see what merchants <i>did</i>, not only what they said on calls.</p></div>
-    </div>
-  </div>
-
-  <div class="cs-sec">
-    <h2><span class="num">08</span>What I learned</h2>
-    <ul>
-      <li><b>The request isn't always the problem.</b> I was asked for a shop. What merchants needed was to stop running every order by hand.</li>
-      <li><b>Show something before building it.</b> My simplest idea, fixed templates, was wrong. I only found out because I showed it to merchants first.</li>
-      <li><b>Define success before the pilot.</b> Next time I'd set metrics upfront (store published, time to first product, first order) and time the five-minute goal with real merchants. Then the pilot would produce evidence, not just feedback.</li>
-    </ul>
-  </div>
-
-  <div class="next"><a href="booking.html"><span><small>Next case study</small>Booking: less admin around every appointment</span><span>→</span></a></div>
-</div></main>
+<main class="cs cs-compact"><div class="wrap"><section class="cx-case"><div class="cx"><article class="cx-b"><span class="cx-l"><i>01</i>Problem</span><h3>Every order was run by hand.</h3><ul><li>A typical order: PDF catalogue on chat → customer picks a code → back-and-forth on price and delivery → UPI screenshot checked by hand.</li><li>Shopify-style stores felt too technical and too costly, so most had no website at all.</li></ul></article><article class="cx-b"><span class="cx-l"><i>02</i>Discovery</span><h3>The barrier was effort, not desire.</h3><ul><li><b>44 merchant interviews</b>, asking how they sold their last product, not what features they wanted.</li><li>Of 39 product sellers: <b>15</b> had no website, <b>10</b> found setup too technical or slow, <b>8</b> named cost.</li><li>My fixed-template idea was rejected: merchants wanted the store to look like <b>their brand</b>, because that builds trust.</li></ul></article><article class="cx-b"><span class="cx-l"><i>03</i>Approach</span><h3>Counted themes, then grouped them into three problems.</h3><ul><li>Tagged each interview by theme and counted how often each came up.</li><li>Grouped them into <b>setup effort</b>, <b>trust</b> and <b>manual payments</b>.</li><li>Counter-signal kept in view: 12 of 39 (made-to-order, wholesale) don't fit a fixed store, so V1 targets ready-stock sellers.</li></ul></article><article class="cx-b"><span class="cx-l"><i>04</i>Solution</span><h3>A branded store that completes one real order end to end.</h3><ul><li>Pick a template, then add your own logo, colours and fonts.</li><li>Payment to the merchant's <b>UPI ID</b> instead of a gateway: no setup, at the cost of payouts within 24 hours.</li><li>Coupons, campaigns and abandoned-cart reminders moved to V2, since they only matter after a first sale.</li></ul></article></div></section><div class="cx-out"><span class="chip live">Live</span><p>Launched with <b>10 pilot merchants</b>. Feedback: they could set up and run the store themselves. I have no verified usage numbers, so I don't show any.</p></div><div class="next"><a href="booking.html"><span><small>Next case study</small>Booking: less admin around every appointment</span><span>→</span></a></div></div></main>
 
 <footer><div class="wrap"><span>© 2026 Kajal Gupta</span><a href="mailto:kajalnm20@gmail.com">kajalnm20@gmail.com</a></div></footer>
 </body>
