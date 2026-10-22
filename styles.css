@@ -1648,3 +1648,113 @@ html { background: #000 !important; }
 .spot .t-beam::before { clip-path: polygon(45.5% 0, 54.5% 0, 86% 100%, 14% 100%) !important; }
 .spot .t-pool { width: min(1150px, 130vw) !important; margin-left: calc(min(1150px, 130vw) / -2) !important; }
 @media (max-width: 700px) { .spot .t-beam::before { clip-path: polygon(43% 0, 57% 0, 92% 100%, 8% 100%) !important; } }
+
+/* =====================================================================
+   Journey cards: illustrations under the title (corner animations removed)
+   ===================================================================== */
+.wk .viz { display: none !important; }
+.wk-ill { flex: 1 1 auto; min-height: 64px; display: flex; align-items: center; justify-content: flex-start; margin: 10px 0 12px; }
+.wk-ill .il { width: 100%; height: 100%; max-height: 190px; overflow: visible; }
+.works.three .wk:first-child .wk-ill .il, .works.one .wk-ill .il { max-width: 520px; }
+@media (max-width: 959px) { .wk-ill { flex: none; height: 130px; } }
+.il * { transform-box: fill-box; transform-origin: center; }
+.il .il-card { fill: #fff; stroke: #1a1f1c; stroke-width: 1.5; }
+.il .il-soft { fill: color-mix(in srgb, var(--mustard-soft) 70%, #fff); }
+.il .il-line { fill: none; stroke: rgba(26,31,28,.35); stroke-width: 2.4; stroke-linecap: round; }
+.il .il-grid { fill: none; stroke: rgba(26,31,28,.12); stroke-width: 1.5; }
+.il .il-ink-fill { fill: #1a1f1c; }
+.il .il-accent { fill: var(--mustard); }
+.il .il-tick { fill: none; stroke: #1a1f1c; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.il .il-tick-w { fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.il .il-arrow { fill: none; stroke: #1a1f1c; stroke-width: 2; stroke-dasharray: 5 6; stroke-linecap: round; animation: ilDash 1.2s linear infinite; }
+.il .il-head { fill: none; stroke: #1a1f1c; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.il .il-txt { font: 600 11px "Inter", sans-serif; fill: #1a1f1c; }
+.il .il-txt.dim { fill: rgba(26,31,28,.45); }
+@keyframes ilDash { to { stroke-dashoffset: -22; } }
+
+/* 0→1 Shop: scattered chat screenshots → a store on a phone */
+.il-shop .il-chats g { animation: ilFloat 4s ease-in-out infinite alternate; }
+.il-shop .il-chats .b2 { animation-delay: -1.3s; } .il-shop .il-chats .b3 { animation-delay: -2.6s; }
+.il-shop .il-tile { fill: color-mix(in srgb, var(--mustard-soft) 80%, #fff); stroke: #1a1f1c; stroke-width: 1.2; animation: ilPop 6s ease-in-out infinite; }
+.il-shop .t1 { fill: var(--mustard); } .il-shop .t2 { animation-delay: .25s; } .il-shop .t3 { animation-delay: .5s; } .il-shop .t4 { fill: var(--mustard); animation-delay: .75s; }
+.il-shop .il-buy { animation: ilPulse 6s ease-in-out infinite; }
+.il-shop .il-badge { animation: ilBadge 6s ease-in-out infinite; }
+@keyframes ilFloat { from { transform: translateY(-3px) rotate(-1.5deg); } to { transform: translateY(3px) rotate(1.5deg); } }
+@keyframes ilPop { 0%, 8% { transform: scale(0); opacity: 0; } 18%, 82% { transform: scale(1); opacity: 1; } 92%, 100% { transform: scale(0); opacity: 0; } }
+@keyframes ilPulse { 0%, 30% { opacity: 0; } 40%, 80% { opacity: 1; } 55% { transform: scale(1.04); } 92%, 100% { opacity: 0; } }
+@keyframes ilBadge { 0%, 45% { transform: scale(0); } 52% { transform: scale(1.25); } 58%, 85% { transform: scale(1); } 95%, 100% { transform: scale(0); } }
+
+/* Booking: a long chat thread → one form with upload, calendar and confirmation */
+.il-book .il-thread { animation: ilScroll 7s linear infinite; transform-box: view-box; }
+.il-book .il-drop { fill: #fff; stroke: rgba(26,31,28,.4); stroke-width: 1.3; stroke-dasharray: 4 3; }
+.il-book .il-doc { animation: ilDoc 7s ease-in-out infinite; }
+.il-book .il-cal rect { fill: #f1ede5; }
+.il-book .il-cal .pick { animation: ilPick 7s ease-in-out infinite; }
+.il-book .il-ok { animation: ilBadge 7s ease-in-out infinite; animation-delay: .6s; }
+@keyframes ilScroll { from { transform: translateY(0); } to { transform: translateY(-72px); } }
+@keyframes ilDoc { 0%, 15% { transform: translateX(-24px); opacity: 0; } 30%, 85% { transform: translateX(0); opacity: 1; } 95%, 100% { opacity: 0; } }
+@keyframes ilPick { 0%, 38% { fill: #f1ede5; } 46%, 88% { fill: var(--mustard); } 100% { fill: #f1ede5; } }
+
+/* Growth & onboarding: a drop-off in the funnel, a tooltip fixes it, blogs fan out */
+.il-grow .il-bar { fill: color-mix(in srgb, var(--mustard-soft) 85%, #fff); stroke: #1a1f1c; stroke-width: 1.2; }
+.il-grow .il-fix { fill: var(--mustard); transform-origin: left center; animation: ilFix 7s ease-in-out infinite; }
+.il-grow .il-tip { animation: ilTip 7s ease-in-out infinite; }
+.il-grow .il-qm { font: 700 15px "Inter", sans-serif; fill: #fff; text-anchor: middle; }
+.il-grow .il-blogs g { transform-origin: 50% 100%; animation: ilFan 7s ease-in-out infinite; }
+.il-grow .il-blogs .d1 { --r: -9deg; } .il-grow .il-blogs .d2 { --r: -3deg; } .il-grow .il-blogs .d3 { --r: 5deg; }
+@keyframes ilFix { 0%, 30% { transform: scaleX(.45); } 50%, 85% { transform: scaleX(1.12); } 100% { transform: scaleX(.45); } }
+@keyframes ilTip { 0%, 12% { opacity: 0; transform: translateX(-60px) scale(.6); } 22%, 40% { opacity: 1; transform: translateX(-60px) scale(1); } 52%, 85% { opacity: 1; transform: translateX(0) scale(1); } 95%, 100% { opacity: 0; transform: translateX(0) scale(.8); } }
+@keyframes ilFan { 0%, 20% { transform: rotate(0); } 45%, 80% { transform: rotate(var(--r)); } 100% { transform: rotate(0); } }
+
+/* Retention: numbers on a dashboard turn into a next step */
+.il-dash .il-chart { fill: none; stroke: #1a1f1c; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: ilDraw 6s ease-in-out infinite; }
+.il-dash .il-ping { fill: var(--mustard); stroke: #1a1f1c; stroke-width: 1.5; animation: ilPing 6s ease-in-out infinite; }
+.il-dash .il-link { animation: ilDash 1.2s linear infinite, ilShow 6s ease-in-out infinite; }
+.il-dash .il-next { animation: ilNext 6s ease-in-out infinite; }
+@keyframes ilDraw { 0% { stroke-dashoffset: 1; } 35%, 88% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+@keyframes ilPing { 0%, 32% { transform: scale(0); } 40% { transform: scale(1.5); } 48%, 88% { transform: scale(1); } 100% { transform: scale(0); } }
+@keyframes ilShow { 0%, 45% { opacity: 0; } 52%, 88% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes ilNext { 0%, 50% { opacity: 0; transform: translateX(-10px) scale(.9); } 60%, 88% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+
+/* Acquisition: a visitor gets an answer from a free calculator before any sign-up */
+.il-tools .il-user { animation: ilWalk 6s ease-in-out infinite; }
+.il-tools .il-gauge { fill: none; stroke: #ece7dd; stroke-width: 9; stroke-linecap: round; }
+.il-tools .il-gauge-on { fill: none; stroke: var(--mustard); stroke-width: 9; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: ilGauge 6s ease-in-out infinite; }
+.il-tools .il-needle { transform-box: view-box; transform-origin: 124px 96px; animation: ilNeedle 6s ease-in-out infinite; }
+.il-tools .il-needle-l { stroke: #1a1f1c; stroke-width: 3; stroke-linecap: round; }
+.il-tools .il-dashed { fill: none; stroke: rgba(26,31,28,.35); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.il-tools .il-gate { opacity: .7; }
+@keyframes ilWalk { 0% { transform: translateX(-10px); opacity: 0; } 15%, 85% { transform: translateX(10px); opacity: 1; } 100% { transform: translateX(10px); opacity: 0; } }
+@keyframes ilGauge { 0%, 20% { stroke-dashoffset: 1; } 55%, 85% { stroke-dashoffset: .3; } 100% { stroke-dashoffset: 1; } }
+@keyframes ilNeedle { 0%, 20% { transform: rotate(-90deg); } 55%, 85% { transform: rotate(36deg); } 100% { transform: rotate(-90deg); } }
+
+/* QikD: clear steps fill in one by one, and follow-up emails reach people who dropped off */
+.il-qikd .il-track { fill: none; stroke: #e3ddd1; stroke-width: 5; stroke-linecap: round; }
+.il-qikd .il-prog { fill: none; stroke: var(--mustard); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: ilProg 8s ease-in-out infinite; }
+.il-qikd .il-step circle { fill: #fff; stroke: #1a1f1c; stroke-width: 1.6; animation: ilStep 8s ease-in-out infinite; }
+.il-qikd .il-step .il-tick, .il-qikd .il-step .il-idcard { opacity: 0; animation: ilStepTick 8s ease-in-out infinite; }
+.il-qikd .il-idcard { fill: none; stroke: #1a1f1c; stroke-width: 1.6; }
+.il-qikd .s1 * { animation-delay: 0s; } .il-qikd .s2 * { animation-delay: .9s; } .il-qikd .s3 * { animation-delay: 1.8s; } .il-qikd .s4 * { animation-delay: 2.7s; }
+.il-qikd .il-mail { transform-box: view-box; animation: ilMail 8s ease-in-out infinite; }
+.il-qikd .il-env { fill: none; stroke: #1a1f1c; stroke-width: 1.5; stroke-linejoin: round; }
+@keyframes ilProg { 0%, 5% { stroke-dashoffset: 1; } 45%, 88% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+@keyframes ilStep { 0%, 8% { fill: #fff; } 14%, 85% { fill: var(--mustard); } 95%, 100% { fill: #fff; } }
+@keyframes ilStepTick { 0%, 8% { opacity: 0; } 14%, 85% { opacity: 1; } 95%, 100% { opacity: 0; } }
+@keyframes ilMail { 0%, 50% { transform: translate(250px, 84px); opacity: 0; } 56% { opacity: 1; } 86% { transform: translate(14px, 84px); opacity: 1; } 94%, 100% { transform: translate(14px, 84px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .il, .il * { animation: none !important; } .il-dash .il-chart, .il-qikd .il-prog, .il-tools .il-gauge-on { stroke-dashoffset: 0; } }
+/* illustrations fill only the free space in each card, never stretch it */
+.wk-ill { position: relative; flex: 1 1 0; min-height: 72px; }
+.wk-ill .il { position: absolute; left: 0; top: 0; width: 100%; height: 100%; max-height: none; }
+.works.three .wk:first-child .wk-ill .il, .works.one .wk-ill .il { max-width: none; }
+@media (max-width: 959px) { .wk-ill { flex: none; height: 130px; } }
+@media (min-width: 960px) {
+  .cos { max-height: 680px; }
+  .works.three { grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); }
+  .works.two { grid-template-rows: minmax(0, 1fr); }
+  .wk-ill { margin: 6px 0 10px; min-height: 56px; }
+}
+@media (min-width: 960px) {
+  .co { grid-template-rows: minmax(0, 1fr); }
+  .works { min-height: 0; height: 100%; }
+  .works .wk { min-height: 0; }
+}
