@@ -1642,3 +1642,9 @@ html { background: #000 !important; }
 .co-info .sc-name { flex-direction: column; align-items: flex-start; gap: 2px; }
 .co-info .sc-co h3 { line-height: 1.1; }
 .co-info .sc-co a { line-height: 1.3; }
+
+/* wider spotlight cone */
+.spot .t-beam { width: min(1100px, 120vw) !important; margin-left: calc(min(1100px, 120vw) / -2) !important; }
+.spot .t-beam::before { clip-path: polygon(45.5% 0, 54.5% 0, 86% 100%, 14% 100%) !important; }
+.spot .t-pool { width: min(1150px, 130vw) !important; margin-left: calc(min(1150px, 130vw) / -2) !important; }
+@media (max-width: 700px) { .spot .t-beam::before { clip-path: polygon(43% 0, 57% 0, 92% 100%, 8% 100%) !important; } }
