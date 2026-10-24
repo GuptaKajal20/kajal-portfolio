@@ -2522,3 +2522,10 @@ body:has(.cs-story) .torch { opacity: .4; }
 .qk-shot img { max-height: 340px; }
 .tl-shot img { max-height: 300px; object-fit: contain; background: #fff; }
 .gl-stats b:not([data-n]) { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+/* journey: arrows to move between companies */
+.s3-nav { display: flex; align-items: center; gap: 10px; }
+.s3-arrow { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.22); transition: background .25s, border-color .25s, transform .2s; }
+.s3-arrow svg { width: 20px; height: 20px; fill: none; stroke: #f5f3ee; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.s3-arrow:hover { background: var(--y); border-color: var(--y); } .s3-arrow:hover svg { stroke: #121212; }
+.s3-arrow:active { transform: scale(.94); }
+@media (max-width: 959px) { .s3-arrow { display: none; } }

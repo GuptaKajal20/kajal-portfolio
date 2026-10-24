@@ -235,17 +235,8 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     set(cur + dir); lock();
   }
-  window.addEventListener("wheel", function (e) {
-    if (!desktop() || window.__navScrolling) return;
-    if (Math.abs(e.deltaY) < 1) return;
-    handle(e.deltaY > 0 ? 1 : -1, e);
-  }, { passive: false });
-  window.addEventListener("keydown", function (e) {
-    if (!desktop()) return;
-    var k = e.key, dir = (k === "ArrowDown" || k === "PageDown" || k === " ") ? 1 : (k === "ArrowUp" || k === "PageUp") ? -1 : 0;
-    if (!dir || Math.abs(sec.getBoundingClientRect().top) >= 4) return;
-    if ((dir > 0 && cur === N - 1) || (dir < 0 && cur === 0)) return;
-    e.preventDefault(); set(cur + dir);
+  sec.querySelectorAll(".s3-arrow").forEach(function (btn) {
+    btn.addEventListener("click", function () { set((cur + (+btn.getAttribute("data-dir")) + N) % N); });
   });
   function jump(ci) { set(ci); if (desktop()) align(); else cos[ci].scrollIntoView({ behavior: "smooth" }); }
   window.__jumpCompany = jump;
@@ -270,15 +261,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function render() {
     var w = cardW() + GAP;
     cards.forEach(function (c, i) {
-      var o = i - pos, a = Math.abs(o);
+      var o = i - pos; o = o - N * Math.round(o / N); var a = Math.abs(o);   // nearest position around the loop
       var rot = clamp(-o * MAXROT, -MAXROT, MAXROT), z = -Math.min(a, 2.5) * DEPTH, s = Math.max(MINSCALE, 1 - a * .07);
       var spread = Math.min(w * .78, (root.clientWidth - cardW()) / 4.2);
       c.style.transform = "translateX(" + (o * spread) + "px) translateZ(" + z + "px) rotateY(" + rot + "deg) scale(" + Math.max(MINSCALE, 1 - a * .12) + ")";
-      c.style.opacity = a > 2.6 ? 0 : 1 - Math.max(0, a - 1) * .18;
+      c.style.opacity = a > 2.25 ? Math.max(0, 1 - (a - 2.25) / .25) * .78 : 1 - Math.max(0, a - 1) * .18;
       c.style.filter = "brightness(" + (1 - Math.min(a, 2) * .12) + ")";
       c.style.zIndex = 100 - Math.round(a * 10);
     });
-    var n = clamp(Math.round(pos), 0, N - 1);
+    var n = ((Math.round(pos) % N) + N) % N;
     if (n !== active) {
       active = n; dots.forEach(function (x, i) { x.classList.toggle("on", i === n); });
       bg.style.setProperty("--g1", cards[n].getAttribute("data-c1")); bg.style.setProperty("--g2", cards[n].getAttribute("data-c2"));
@@ -287,15 +278,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function tick() {
     if (!dragging) {
       if (target !== null) { pos += (target - pos) * (reduce ? 1 : .14); if (Math.abs(target - pos) < .002) { pos = target; target = null; } }
-      else if (Math.abs(vel) > .0005) { pos += vel; vel *= FRICTION; if (pos < -.3 || pos > N - .7) vel *= .5; }
-      else { var snap = clamp(Math.round(pos), 0, N - 1); if (Math.abs(snap - pos) > .002) target = snap; }
+      else if (Math.abs(vel) > .0005) { pos += vel; vel *= FRICTION; }
+      else { var snap = Math.round(pos); if (Math.abs(snap - pos) > .002) target = snap; }
     }
-    pos = clamp(pos, -.4, N - .6);
     render();
     if (dragging || target !== null || Math.abs(vel) > .0005) raf = requestAnimationFrame(tick); else raf = null;
   }
   function go() { if (!raf) raf = requestAnimationFrame(tick); }
-  function to(n) { vel = 0; target = clamp(n, 0, N - 1); go(); }
+  function to(n) { vel = 0; target = n; go(); }
+  function toIndex(i) { var cur = Math.round(pos), d = i - (((cur % N) + N) % N); d = d - N * Math.round(d / N); to(cur + d); }   // shortest way round the loop
   root.addEventListener("pointerdown", function (e) {
     if (e.target.closest(".gc-dots, .gc-arrow")) return;
     dragging = true; moved = 0; root.classList.add("dragging"); lastX = e.clientX; lastT = performance.now(); vel = 0; target = null;
@@ -319,12 +310,12 @@ document.addEventListener("DOMContentLoaded", function () {
   var prev = root.querySelector(".gc-prev"), next = root.querySelector(".gc-next");
   if (prev) { prev.addEventListener("pointerdown", function (e) { e.stopPropagation(); }); prev.addEventListener("click", function (e) { e.stopPropagation(); to(Math.round(pos) - 1); }); }
   if (next) { next.addEventListener("pointerdown", function (e) { e.stopPropagation(); }); next.addEventListener("click", function (e) { e.stopPropagation(); to(Math.round(pos) + 1); }); }
-  dots.forEach(function (d, i) { d.setAttribute("role", "tab"); d.setAttribute("aria-label", "Certificate " + (i + 1)); d.addEventListener("click", function (e) { e.stopPropagation(); to(i); }); });
+  dots.forEach(function (d, i) { d.setAttribute("role", "tab"); d.setAttribute("aria-label", "Certificate " + (i + 1)); d.addEventListener("click", function (e) { e.stopPropagation(); toIndex(i); }); });
   cards.forEach(function (c) {
     c.setAttribute("tabindex", "0");
     function open() {
       var i = cards.indexOf(c);
-      if (Math.round(pos) !== i) { to(i); return; }                       // bring it to the front first
+      if ((((Math.round(pos) % N) + N) % N) !== i) { toIndex(i); return; }   // bring it to the front first
       var u = c.getAttribute("data-href"), img = c.querySelector("img"), v = document.querySelector(".cert-view");
       if (!v || !img) { if (u) window.open(u, "_blank", "noopener"); return; }
       v.querySelector("img").src = img.src; v.querySelector("img").alt = img.alt;
@@ -341,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // the middle (third) certificate returns to the centre whenever the carousel scrolls into or out of view
   var home = Math.floor((N - 1) / 2);
   if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function (es) { es.forEach(function () { if (!dragging && !document.querySelector(".cert-view.open")) to(home); }); }, { threshold: [0, .5] }).observe(root);
+    new IntersectionObserver(function (es) { es.forEach(function () { if (!dragging && !document.querySelector(".cert-view.open")) toIndex(home); }); }, { threshold: [0, .5] }).observe(root);
   }
   });
 });
